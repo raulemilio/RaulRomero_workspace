@@ -1,0 +1,10 @@
+17:10:17 **** Incremental Build of configuration Debug for project TP1_1 ****
+make -j4 all 
+arm-none-eabi-size   TP1_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6328	     32	   1568	   7928	   1ef8	TP1_1.elf
+Finished building: default.size.stdout
+ 
+
+17:10:20 Build Finished. 0 errors, 0 warnings. (took 2s.390ms)
+
