@@ -17,6 +17,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP1_1"/>
+			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/Ej1_pushButton"/>
 			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/Ej0_blinky"/>
 		</list>
 	</section>
