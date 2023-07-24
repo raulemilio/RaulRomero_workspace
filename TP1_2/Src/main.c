@@ -76,7 +76,7 @@ int main(void)
   /* Infinite loop */
   while (1)
   {
-	if(BSP_PB_GetState(BUTTON_USER)){
+	if(BSP_PB_GetState(BUTTON_USER)==1){
 		a=!a;
 	}
 		if(a==false){

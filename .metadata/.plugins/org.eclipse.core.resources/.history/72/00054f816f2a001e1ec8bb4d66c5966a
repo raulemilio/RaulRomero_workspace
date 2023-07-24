@@ -1,0 +1,13 @@
+
+#include <stdbool.h>
+#include "main.h"
+#include "stm32f4xx_hal.h"  		/* <- HAL include */
+#include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
+
+#define DEBOUNCE_TIME=40;
+#define BLINKY_TIME_1=100;
+#define BLINKY_TIME_2=500;
+
+void debounceFSM_init(void); // Se carga el estado inicial de la FSM
+void debounceFSM_update(void);	// Actualización de la FSM
+

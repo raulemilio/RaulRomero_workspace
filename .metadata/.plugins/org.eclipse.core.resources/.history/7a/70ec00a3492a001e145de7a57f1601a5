@@ -1,0 +1,11 @@
+
+#include <stdbool.h>
+#include "API_delay.h"
+#include "stm32f4xx_hal.h"  		/* <- HAL include */
+#include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
+
+void debounceFSM_init(delay_t * debounceDelay, tick_t DEBOUNCE_TIME);		// Se carga el estado inicial de la FSM
+void debounceFSM_update(delay_t * debounceDelay);	// Actualización de la FSM
+void buttonPressed(void);			// Invierte el estado del LED2
+void buttonReleased(void);		// Invierte el estado del LED1
+//bool_t readKey( debounceState_t * stateFSM );

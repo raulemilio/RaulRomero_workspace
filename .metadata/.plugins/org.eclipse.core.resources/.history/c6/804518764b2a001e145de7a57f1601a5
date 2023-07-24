@@ -1,0 +1,108 @@
+#include "API_debounce.h"
+
+
+typedef enum{
+	   BUTTON_UP,
+	   BUTTON_FALLING,
+	   BUTTON_DOWN,
+	   BUTTON_RAISING,
+  } debounceState_t;
+
+  static debounceState_t debounce_state;
+
+  bool_t variable;
+
+void debounceFSM_init(delay_t * debounceDelay, tick_t DEBOUNCE_TIME)
+{
+	  // Inicialización de la variable de estado
+	  debounce_state=BUTTON_UP;
+	  //GPIO_INPUT
+	  BSP_PB_Init(BUTTON_USER, BUTTON_MODE_GPIO);
+	  //GPIO_OUPTUP
+	  BSP_LED_Init(LED1); // Utilizado en estado FALLING. Función buttonPressed()
+	  BSP_LED_Init(LED2); // Utilizado en estado RAISING. Función buttonReleased()
+	  BSP_LED_Init(LED3); // Utilizado en estado de ERROR
+	  // inicialización del tiempo de delay para el retardo
+	  delayInit(&debounceDelay,DEBOUNCE_TIME);
+}
+
+void debounceFSM_update(delay_t * debounceDelay,tick_t DEBOUNCE_TIME)
+{
+	  switch (debounce_state) {
+	  		case BUTTON_UP:
+	  			// Chequear condiciones de transición de estado
+	  			if(BSP_PB_GetState(BUTTON_USER)==1){
+	  				// Cambio a próximo estado
+	  				debounce_state = BUTTON_FALLING;
+	  			}else
+	  			{
+	  				// Vuelvo a estado anterior
+	  				debounce_state = BUTTON_UP;
+	  			}
+	  		break;
+
+	  		case BUTTON_FALLING:
+	  			// Se verifica que haya pasado el tiempo de delay para el antirebote y
+	  			// además que el el botón esté pulsado
+	  			if((delayRead(&debounceDelay)==true)&(BSP_PB_GetState(BUTTON_USER)==1))
+	  			{
+	  				// cambio de estado del LED2
+	  				buttonPressed();
+	  				debounce_state = BUTTON_DOWN;
+
+	  			}else
+	  			{
+	  				debounce_state = BUTTON_UP;
+	  			}
+	  		break;
+
+	  		case BUTTON_DOWN:
+	  			  // Cambio de estado
+	  			  if(BSP_PB_GetState(BUTTON_USER)==0){
+	  				  debounce_state = BUTTON_RAISING;
+	  			  }
+
+	  		break;
+
+	  		case BUTTON_RAISING:
+	  			// Se verifica que haya pasado el tiempo de delay para el antirebote y
+	  			// además que el el botón esté soltado
+	  			if((delayRead(&debounceDelay)==true)&(BSP_PB_GetState(BUTTON_USER)==0))
+	  			{
+	  				buttonReleased();
+	  				debounce_state = BUTTON_UP;
+
+
+	  			}else
+	  			{
+	  				debounce_state = BUTTON_DOWN;
+	  			}
+
+	  		break;
+
+	  		default:
+	  			// si no se reconoce un estado conocido se reinicia la máquina
+	  			debounceFSM_init(debounceDelay,DEBOUNCE_TIME);
+	  			// se enciende el LED3 y se queda en estado de error permamente
+	  			Error_Handler();
+	  		break;
+	    }
+}
+
+bool_t readKey( debounceState_t * stateFSM )
+{
+	bool_t ret;
+	if(stateFSM == BUTTON_DOWN){
+		ret=false;
+	}
+	return ret;
+}
+
+void buttonPressed(void)
+{
+	BSP_LED_Toggle(LED2);
+}
+void buttonReleased(void)
+{
+	BSP_LED_Toggle(LED1);
+}

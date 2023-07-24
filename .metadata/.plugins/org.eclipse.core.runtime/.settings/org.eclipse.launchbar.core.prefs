@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP1_2 Debug (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP1_2 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP1_2,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP3 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP2 Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP4_2 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP4_2 Debug (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP1_2 Debug (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP1_2 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP1_2,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP3 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP4,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP4_1 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP4_2
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ej0_blinky/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ej0_blinky/activeLaunchTarget=null\:---
@@ -10,8 +10,13 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ej1_pushButton/activeLaunchTarg
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ejercicio1/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ejercicio_delayNB_1\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ejercicio_delayNB_1\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HAL_BlinkLed_446RE\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:HAL_BlinkLed_446RE\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP1_1\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP1_1\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP1_1/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP1_2\ Debug\ (1)/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP1_2\ Debug\ (1)/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP2_1/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP3\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP4_1\ Debug/activeLaunchMode=debug

@@ -1,5 +1,0 @@
-main.c:76:8:delayInit	1
-main.c:52:5:main	4
-main.c:82:10:delayRead	4
-main.c:148:13:SystemClock_Config	4
-main.c:200:13:Error_Handler	1

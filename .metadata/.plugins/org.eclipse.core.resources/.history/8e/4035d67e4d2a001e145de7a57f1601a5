@@ -1,0 +1,12 @@
+
+#include <stdbool.h>
+#include "main.h"
+#include "stm32f4xx_hal.h"  		/* <- HAL include */
+#include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
+
+delay_t * debounceDelay;
+tick_t DEBOUNCE_TIME;
+
+void debounceFSM_init(void); // Se carga el estado inicial de la FSM
+void debounceFSM_update(delay_t * debounceDelay,tick_t DEBOUNCE_TIME);	// Actualización de la FSM
+

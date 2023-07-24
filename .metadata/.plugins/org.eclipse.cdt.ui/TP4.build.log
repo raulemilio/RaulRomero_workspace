@@ -1,0 +1,42 @@
+08:24:17 **** Incremental Build of configuration Debug for project TP4 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4/Drivers/CMSIS/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4/Drivers/Core/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:25: warning: "BLINKY_TIME1" redefined
+   25 | #define BLINKY_TIME1 200
+      | 
+In file included from ../Src/main.c:19:
+../Inc/main.h:53: note: this is the location of the previous definition
+   53 | #define BLINKY_TIME1 100
+      | 
+../Src/main.c:26: warning: "BLINKY_TIME2" redefined
+   26 | #define BLINKY_TIME2 200
+      | 
+In file included from ../Src/main.c:19:
+../Inc/main.h:54: note: this is the location of the previous definition
+   54 | #define BLINKY_TIME2 500
+      | 
+../Src/main.c:27: warning: "BLINKY_TIME3" redefined
+   27 | #define BLINKY_TIME3 200
+      | 
+In file included from ../Src/main.c:19:
+../Inc/main.h:55: note: this is the location of the previous definition
+   55 | #define BLINKY_TIME3 1000
+      | 
+../Src/main.c: In function 'main':
+../Src/main.c:92:19: warning: unused variable 'debounce_state' [-Wunused-variable]
+   92 |   debounceState_t debounce_state;
+      |                   ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "TP4.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP4.elf
+ 
+arm-none-eabi-size   TP4.elf 
+arm-none-eabi-objdump -h -S  TP4.elf  > "TP4.list"
+   text	   data	    bss	    dec	    hex	filename
+   5148	     32	   1568	   6748	   1a5c	TP4.elf
+Finished building: default.size.stdout
+ 
+Finished building: TP4.list
+ 
+
+08:24:21 Build Finished. 0 errors, 4 warnings. (took 3s.415ms)
+

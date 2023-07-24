@@ -1,0 +1,10 @@
+
+#include <stdbool.h>
+#include "main.h"
+#include "stm32f4xx_hal.h"  		/* <- HAL include */
+#include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
+
+// declaración de funciones públicas
+void debounceFSM_init(void); // Se carga el estado inicial de la FSM
+void debounceFSM_update(void);	// Actualización de la FSM
+
