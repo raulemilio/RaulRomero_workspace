@@ -17,6 +17,9 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/Ej2_uart"/>
+			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/PdM-Eddandrade-CESEFIUBA-main/PdM_Practica 3_Eddandrade"/>
+			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/PdM-Eddandrade-CESEFIUBA-main/PdM_Practica 4_Eddandrade"/>
 			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/ProgramacionMicrocontroladores-main/Practica3"/>
 			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/ProgramacionMicrocontroladores-main/Practica2"/>
 			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/PdM_workspace-main/Practica_2"/>

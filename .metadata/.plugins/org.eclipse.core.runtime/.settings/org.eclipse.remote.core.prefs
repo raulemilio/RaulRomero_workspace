@@ -1,0 +1,11 @@
+connections/org.eclipse.remote.serial.core.connectionType/Fafa/serial.baudRate=6
+connections/org.eclipse.remote.serial.core.connectionType/Fafa/serial.byteSize=2
+connections/org.eclipse.remote.serial.core.connectionType/Fafa/serial.parity=2
+connections/org.eclipse.remote.serial.core.connectionType/Fafa/serial.portName=/dev/ttyACM0
+connections/org.eclipse.remote.serial.core.connectionType/Fafa/serial.stopBits=0
+connections/org.eclipse.remote.serial.core.connectionType/serial/serial.baudRate=6
+connections/org.eclipse.remote.serial.core.connectionType/serial/serial.byteSize=2
+connections/org.eclipse.remote.serial.core.connectionType/serial/serial.parity=2
+connections/org.eclipse.remote.serial.core.connectionType/serial/serial.portName=/dev/ttyACM0
+connections/org.eclipse.remote.serial.core.connectionType/serial/serial.stopBits=0
+eclipse.preferences.version=1

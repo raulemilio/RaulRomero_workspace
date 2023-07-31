@@ -1,0 +1,11 @@
+#include <stdbool.h>
+#include "main.h"
+#include "stm32f4xx_hal.h"  		/* <- HAL include */
+#include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
+
+UART_HandleTypeDef UartHandle;
+
+bool_t uartInit();
+void uartSendString(uint8_t * pstring);
+void uartSendStringSize(uint8_t * pstring, uint16_t size);
+void uartReceiveStringSize(uint8_t * pstring, uint16_t size);

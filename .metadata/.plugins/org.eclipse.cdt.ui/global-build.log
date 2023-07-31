@@ -1,50 +1,21 @@
-19:26:17 **** Incremental Build of configuration Debug for project TP4_2 ****
+13:51:16 **** Incremental Build of configuration Debug for project TP5 ****
 make -j4 all 
-arm-none-eabi-gcc "../Drivers/API/Scr/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/CMSIS/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/Core/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Scr/API_debounce.d" -MT"Drivers/API/Scr/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Scr/API_debounce.o"
-arm-none-eabi-gcc -o "TP4_2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP4_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP4_2.elf
+arm-none-eabi-gcc "../Drivers/API/Scr/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP5/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP5/Drivers/CMSIS/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP5/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP5/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP5/Drivers/Core/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP5/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Scr/API_debounce.d" -MT"Drivers/API/Scr/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Scr/API_debounce.o"
+arm-none-eabi-gcc -o "TP5.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP5/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP5.elf
  
-arm-none-eabi-size   TP4_2.elf 
-arm-none-eabi-objdump -h -S  TP4_2.elf  > "TP4_2.list"
+arm-none-eabi-size   TP5.elf 
+arm-none-eabi-objdump -h -S  TP5.elf  > "TP5.list"
    text	   data	    bss	    dec	    hex	filename
-   7184	     36	   1596	   8816	   2270	TP4_2.elf
+  12300	    252	   1708	  14260	   37b4	TP5.elf
 Finished building: default.size.stdout
  
-Finished building: TP4_2.list
+Finished building: TP5.list
  
-19:49:44 **** Build of configuration Debug for project TP4_1 ****
+13:51:23 **** Incremental Build of configuration Debug for project TP5 ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/CMSIS/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/Core/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/CMSIS/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/Core/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
-arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/CMSIS/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/Core/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
-arm-none-eabi-gcc "../Drivers/API/Scr/API_delay.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/CMSIS/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/Core/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Scr/API_delay.d" -MT"Drivers/API/Scr/API_delay.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Scr/API_delay.o"
-../Drivers/API/Scr/API_delay.c: In function 'delayWrite':
-../Drivers/API/Scr/API_delay.c:31:5: warning: implicit declaration of function 'Error_Handler' [-Wimplicit-function-declaration]
-   31 |     Error_Handler();
-      |     ^~~~~~~~~~~~~
-arm-none-eabi-gcc -o "TP4_1.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_1/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP4_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP4_1.elf
- 
-arm-none-eabi-size   TP4_1.elf 
-arm-none-eabi-objdump -h -S  TP4_1.elf  > "TP4_1.list"
+arm-none-eabi-size   TP5.elf 
    text	   data	    bss	    dec	    hex	filename
-   7004	     36	   1588	   8628	   21b4	TP4_1.elf
+  12300	    252	   1708	  14260	   37b4	TP5.elf
 Finished building: default.size.stdout
- 
-Finished building: TP4_1.list
- 
-19:52:20 **** Incremental Build of configuration Debug for project TP4_2 ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/CMSIS/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/Core/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Drivers/API/Scr/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/CMSIS/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/Core/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Scr/API_debounce.d" -MT"Drivers/API/Scr/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Scr/API_debounce.o"
-arm-none-eabi-gcc -o "TP4_2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TP4_2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP4_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP4_2.elf
- 
-arm-none-eabi-size   TP4_2.elf 
-arm-none-eabi-objdump -h -S  TP4_2.elf  > "TP4_2.list"
-   text	   data	    bss	    dec	    hex	filename
-   7188	     36	   1596	   8820	   2274	TP4_2.elf
-Finished building: default.size.stdout
- 
-Finished building: TP4_2.list
  

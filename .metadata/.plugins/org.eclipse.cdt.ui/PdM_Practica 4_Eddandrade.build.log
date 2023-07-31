@@ -1,0 +1,10 @@
+16:41:11 **** Incremental Build of configuration Debug for project PdM_Practica 4_Eddandrade ****
+make -j4 all 
+arm-none-eabi-size   PdM_Practica\ 4_Eddandrade.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12424	    120	   1592	  14136	   3738	PdM_Practica 4_Eddandrade.elf
+Finished building: default.size.stdout
+ 
+
+16:41:13 Build Finished. 0 errors, 0 warnings. (took 2s.11ms)
+

@@ -1,0 +1,10 @@
+13:51:23 **** Incremental Build of configuration Debug for project TP5 ****
+make -j4 all 
+arm-none-eabi-size   TP5.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12300	    252	   1708	  14260	   37b4	TP5.elf
+Finished building: default.size.stdout
+ 
+
+13:51:25 Build Finished. 0 errors, 0 warnings. (took 2s.36ms)
+
