@@ -1,0 +1,10 @@
+09:11:02 **** Build of configuration Debug for project TF_Termometro ****
+make -j4 all 
+arm-none-eabi-size   TF_Termometro.elf 
+   text	   data	    bss	    dec	    hex	filename
+  30752	    488	   1848	  33088	   8140	TF_Termometro.elf
+Finished building: default.size.stdout
+ 
+
+09:11:04 Build Finished. 0 errors, 0 warnings. (took 1s.895ms)
+

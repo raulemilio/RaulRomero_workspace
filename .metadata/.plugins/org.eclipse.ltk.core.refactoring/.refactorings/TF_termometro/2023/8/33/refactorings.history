@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;TF_termometro/Drivers/API/Inc/spiconfig.h&apos; to &apos;spiConfig.h&apos;" description="Rename resource &apos;spiconfig.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Drivers/API/Inc/spiconfig.h" name="spiConfig.h" stamp="1691933369749" updateReferences="true"/>
+</session>

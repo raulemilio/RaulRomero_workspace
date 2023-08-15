@@ -1,0 +1,5 @@
+1692029116911	Rename resource 'BMPXX80.h'
+1692029127821	Rename resource 'BMXX80.c'
+1692029852236	Move 'termometroConfig.h' to 'Inc'
+1692030021789	Move 'FSM_termometro.h' to 'Inc'
+1692030034205	Move 'FSM_termometro.c' to 'Src'

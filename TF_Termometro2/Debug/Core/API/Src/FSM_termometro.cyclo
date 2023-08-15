@@ -1,0 +1,5 @@
+FSM_termometro.c:39:13:FSM_Termometro_Init	1
+FSM_termometro.c:54:16:FSM_Termometro_Connect	2
+FSM_termometro.c:68:8:FSM_Termometro_Measure	3
+FSM_termometro.c:86:13:FSM_Termometro_Range	2
+FSM_termometro.c:101:6:FSM_Termometro_Update	9

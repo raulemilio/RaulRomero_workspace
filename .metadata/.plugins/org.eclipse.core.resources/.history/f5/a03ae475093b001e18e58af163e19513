@@ -1,0 +1,96 @@
+/*
+ * FSM_termometro.c
+ *
+ *  Created on: 14 ago. 2023
+ *      Author: rome
+ */
+#include <FSM_termometro.h>
+
+typedef enum{
+	INIT,
+	CONNECT,
+	MEASURE,
+	RANGE,
+}fsmState_t;
+
+fsmState_t fsm_state=INIT;
+int8_t error;
+
+static float temperature;
+
+void FSM_Termometro_Init(void)
+{
+	  MX_GPIO_Init();
+	  MX_SPI1_Init();
+	  MX_USART3_UART_Init();
+	  MX_I2C2_Init();
+	  LCD44780_Init();
+}
+
+void FSM_Termometro_Connect(void)
+{
+	 BMP280_Init(&hspi1, BMP280_TEMPERATURE_16BIT, BMP280_FORCEDMODE);
+	 LCD44780_Backlight(1); // Turn on backlight
+}
+int8_t FSM_Termometro_Measure(void)
+{
+	  int8_t ret;
+	  temperature=BMP280_ReadTemperature();
+
+	  if ((temperature<TEMPERATURE_MAX) && (temperature>TEMPERATURE_MIN)){
+		  UART_Send_Temperature(temperature);
+		  LCD44780_UpdateTemperature(temperature);
+		  ret =0;
+	  }else
+	  	  {
+		  	  LCD44780_SensorTemperatureError();
+		  	  UART_SensorTemperatureError();
+		  	  ret=-1;
+	  	  }
+	  return ret;
+}
+void FSM_Termometro_Range(void)
+{
+	if(temperature>TEMPERATURE_ALARM)
+	{
+		LCD44780_TemperatureAlarm();
+		UART_TemperatureAlarm();
+	}
+}
+
+void FSM_Termometro_Update(void)
+{
+	  switch (fsm_state) {
+
+	  	  	  case INIT:
+	  	  		    FSM_Termometro_Init();
+	                fsm_state=CONNECT;
+	  	  	  break;
+
+	  	  	  case CONNECT:
+	  	  		    FSM_Termometro_Connect();
+	  	  		    fsm_state=MEASURE;
+	  	  	  break;
+
+	  	  	  case MEASURE:
+	  	  		    error=FSM_Termometro_Measure();
+	  	  		    if(error==0){
+		  	  		    fsm_state=RANGE;
+	  	  		    }else
+	  	  		    	if(error==-1)
+	  	  		    	{
+	  	  		    	fsm_state=CONNECT;
+	  	  		    	}
+	  	  	  break;
+
+	  	  	  case RANGE:
+	  	  		    FSM_Termometro_Range();
+	  	  		    fsm_state=MEASURE;
+	  	  	  break;
+
+	  	  	  default:
+	  	  		fsm_state=INIT;
+	  	  	  break;
+	  	  }
+}
+

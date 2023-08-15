@@ -1,0 +1,16 @@
+/*
+ * port.h
+ *
+ *  Created on: Aug 13, 2023
+ *      Author: rome
+ */
+
+#ifndef INC_PORT_H_
+#define INC_PORT_H_
+
+#include "stm32f4xx_hal.h"
+#include "main.h"
+
+void MX_GPIO_Init(void);
+
+#endif /* INC_PORT_H_ */

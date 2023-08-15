@@ -1,0 +1,16 @@
+/*
+ * peripheralPort.h
+ *
+ *  Created on: Aug 13, 2023
+ *      Author: rome
+ */
+
+#ifndef API_INC_PERIPHERALPORT_H_
+#define API_INC_PERIPHERALPORT_H_
+
+static void MX_GPIO_Init(void);
+static void MX_SPI1_Init(void);
+static void MX_USART3_UART_Init(void);
+static void MX_I2C2_Init(void);
+
+#endif /* API_INC_PERIPHERALPORT_H_ */

@@ -1,0 +1,13 @@
+/*
+ * termometro.h
+ *
+ *  Created on: Aug 13, 2023
+ *      Author: rome
+ */
+
+#ifndef INC_TERMOMETRO_H_
+#define INC_TERMOMETRO_H_
+#include "main.h"
+void FSM_Init();
+
+#endif /* INC_TERMOMETRO_H_ */

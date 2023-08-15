@@ -1,0 +1,14 @@
+port.c:31:6:setSPI_Port_Name	1
+port.c:35:6:setI2C_Port_Name	1
+port.c:39:6:setUART_Port_Name	1
+port.c:48:6:MX_GPIO_Init	1
+port.c:68:6:MX_SPI_Init	2
+port.c:87:6:BMP280_SPI_TransmitReceive	1
+port.c:100:6:MX_I2C_Init	4
+port.c:131:6:LCDHD44780_I2C_PCF8574T_TransmitReceive	1
+port.c:146:6:MX_USART_UART_Init	2
+port.c:161:6:UART_Send_Temperature	1
+port.c:166:6:UART_TemperatureAlarm	1
+port.c:171:6:UART_SensorTemperatureError	1
+port.c:176:6:UART_SensorConnectError	1
+port.c:182:1:__io_putchar	1

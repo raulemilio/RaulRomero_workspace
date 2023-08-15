@@ -1,0 +1,17 @@
+/*
+ * termometroConfig.h
+ *
+ *  Created on: 14 ago. 2023
+ *      Author: rome
+ */
+
+#ifndef INC_TERMOMETROCONFIG_H_
+#define INC_TERMOMETROCONFIG_H_
+
+
+#define TEMPERATURE_MIN   0
+#define TEMPERATURE_MAX   35
+#define TEMPERATURE_ALARM 28
+
+
+#endif /* INC_TERMOMETROCONFIG_H_ */

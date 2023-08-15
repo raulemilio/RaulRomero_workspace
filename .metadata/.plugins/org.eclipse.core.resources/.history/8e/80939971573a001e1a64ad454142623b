@@ -1,0 +1,82 @@
+/*
+ * LCD44780.c
+ *
+ *  Created on: Aug 13, 2023
+ *      Author: rome
+ */
+#include "LCD44780.h"
+
+uint8_t backlight_state = 1;
+
+void LCD44780_TransmitReceive(uint8_t nibble, uint8_t rs) {
+  uint8_t data = nibble << D4_BIT;
+  data |= rs << RS_BIT;
+  data |= backlight_state << BL_BIT; // Include backlight state in data
+  LCDHD44780_I2C_PCF8574T_TransmitReceive(data,1,100);
+}
+
+void LCD44780_Send_Cmd(uint8_t cmd) {
+  uint8_t upper_nibble = cmd >> 4;
+  uint8_t lower_nibble = cmd & 0x0F;
+  lcd_write_nibble(upper_nibble, 0);
+  lcd_write_nibble(lower_nibble, 0);
+  if (cmd == 0x01 || cmd == 0x02) {
+    HAL_Delay(2);
+  }
+}
+
+void LCD44780_Send_Data(uint8_t data) {
+  uint8_t upper_nibble = data >> 4;
+  uint8_t lower_nibble = data & 0x0F;
+  lcd_write_nibble(upper_nibble, 1);
+  lcd_write_nibble(lower_nibble, 1);
+}
+
+void LCD44780_Init() {
+  HAL_Delay(50);
+  LCD44780_TransmitReceive(0x03, 0);
+  HAL_Delay(5);
+  LCD44780_TransmitReceive(0x03, 0);
+  HAL_Delay(1);
+  LCD44780_TransmitReceive(0x03, 0);
+  HAL_Delay(1);
+  LCD44780_TransmitReceive(0x02, 0);
+
+  LCD44780_Send_Cmd(0x01);
+  HAL_Delay(2);
+}
+
+void LCD44780_Write_String(char *str) {
+  while (*str) {
+	  LCD44780_Send_Data(*str++);
+  }
+}
+
+void LCD44780_Set_Cursor(uint8_t row, uint8_t column) {
+    uint8_t address;
+    switch (row) {
+        case 0:
+            address = 0x00;
+            break;
+        case 1:
+            address = 0x40;
+            break;
+        default:
+            address = 0x00;
+    }
+    address += column;
+    LCD44780_Send_Data(0x80 | address);
+}
+
+void LCD44780_Clear() {
+	LCD44780_Send_Cmd(0x01);
+    HAL_Delay(2);
+}
+
+void LCD44780_Backlight(uint8_t state) {
+  if (state) {
+    backlight_state = 1;
+  } else {
+    backlight_state = 0;
+  }
+}

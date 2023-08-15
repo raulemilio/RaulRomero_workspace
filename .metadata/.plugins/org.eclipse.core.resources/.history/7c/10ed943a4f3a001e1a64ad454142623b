@@ -1,0 +1,13 @@
+/*
+ * termometro.c
+ *
+ *  Created on: Aug 13, 2023
+ *      Author: rome
+ */
+
+#include "termometro.h"
+
+void FSM_Init()
+{
+
+}

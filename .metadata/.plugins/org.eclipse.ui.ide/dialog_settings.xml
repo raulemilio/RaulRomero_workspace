@@ -17,6 +17,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/en.stm32cubef4_v1-27-0/STM32Cube_FW_F4_V1.27.0/Projects/STM32F429I-Discovery/Examples/SPI/SPI_FullDuplex_ComPolling"/>
+			<item value="/home/rome/Escritorio/cese/cursos/protocolos/TFI/BMXX80_STM32_HAL-master"/>
 			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/Ej2_uart"/>
 			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/PdM-Eddandrade-CESEFIUBA-main/PdM_Practica 3_Eddandrade"/>
 			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/PdM-Eddandrade-CESEFIUBA-main/PdM_Practica 4_Eddandrade"/>
@@ -27,5 +29,7 @@
 			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/Ej1_pushButton"/>
 			<item value="/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/Ej0_blinky"/>
 		</list>
+	</section>
+	<section name="NewWizardAction">
 	</section>
 </section>

@@ -1,6 +1,0 @@
-#include "main.h"
-
-static void debounceFSM_init(void);		// Se carga el estado inicial de la FSM
-static void debounceFSM_update(void);	// Actualización de la FSM
-void buttonPressed(void);			// Invierte el estado del LED2
-void buttonReleased(void);		// Invierte el estado del LED1

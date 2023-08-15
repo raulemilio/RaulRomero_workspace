@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="ButtonMode_TypeDef"/>
+		<item key="selection" value="GPIO"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="GPIO"/>
+			<item value="PIN"/>
+			<item value="SPI"/>
+			<item value="BMP280_MEASURING"/>
+			<item value="NORMALMODE"/>
+			<item value="delay"/>
+			<item value="sprintf"/>
+			<item value="send"/>
 			<item value="ButtonMode_TypeDef"/>
 			<item value="Error_Handler"/>
 			<item value="tog"/>
@@ -19,8 +27,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="859"/>
-		<item key="DIALOG_Y_ORIGIN" value="58"/>
+		<item key="DIALOG_X_ORIGIN" value="749"/>
+		<item key="DIALOG_Y_ORIGIN" value="6"/>
 		<item key="DIALOG_WIDTH" value="357"/>
 		<item key="DIALOG_HEIGHT" value="408"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>

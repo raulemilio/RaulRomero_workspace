@@ -1,0 +1,43 @@
+/*
+ * FSM_termometro.c
+ *
+ *  Created on: 14 ago. 2023
+ *      Author: rome
+ */
+#include "FSM_termometro.h"
+
+float temperature;
+
+void FSM_Init(void)
+{
+	  MX_GPIO_Init();
+	  MX_SPI1_Init();
+	  MX_USART3_UART_Init();
+	  MX_I2C2_Init();
+	  LCD44780_Init();
+}
+
+void FSM_Connect(void)
+{
+	 BMP280_Init(&hspi1, BMP280_TEMPERATURE_16BIT, BMP280_FORCEDMODE);
+	 LCD44780_Backlight(1); // Turn on backlight
+	 HAL_Delay(3000);
+}
+int8_t FSM_Measure(void)
+{
+	  int8_t ret;
+	  temperature=BMP280_ReadTemperature();
+
+	  if ((temperature<TEMPERATURE_MAX) && (temperature>TEMPERATURE_MIN)){
+		  UART_Send_Temperature(temperature);
+		  LCD44780_UpdateTemperature(temperature);
+		  ret =0;
+	  }else
+	  	  {
+		  	  LCD44780_SensorTemperatureError();
+		  	  UART_SensorTemperatureError();
+		  	  ret=-1;
+	  	  }
+	  return ret;
+}
+

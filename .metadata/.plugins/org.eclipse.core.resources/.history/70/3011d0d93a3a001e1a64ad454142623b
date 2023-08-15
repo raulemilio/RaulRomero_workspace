@@ -1,0 +1,23 @@
+/*
+ * peripheralPort.h
+ *
+ *  Created on: Aug 13, 2023
+ *      Author: rome
+ */
+#include "main.h"
+
+I2C_HandleTypeDef hi2c2;
+
+SPI_HandleTypeDef hspi1;
+
+UART_HandleTypeDef huart3;
+
+#ifndef API_INC_PERIPHERALPORT_H_
+#define API_INC_PERIPHERALPORT_H_
+
+void MX_GPIO_Init(void);
+void MX_SPI1_Init(void);
+void MX_USART3_UART_Init(void);
+void MX_I2C2_Init(void);
+
+#endif /* API_INC_PERIPHERALPORT_H_ */

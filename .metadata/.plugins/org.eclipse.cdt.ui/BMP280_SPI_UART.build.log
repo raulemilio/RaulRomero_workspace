@@ -1,0 +1,54 @@
+11:36:16 **** Incremental Build of configuration Debug for project BMP280_SPI_UART ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/LCD44780.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/BMP280_SPI_UART/Core/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/LCD44780.d" -MT"Core/Src/LCD44780.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/LCD44780.o"
+arm-none-eabi-gcc "../Core/Src/port.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/BMP280_SPI_UART/Core/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/port.d" -MT"Core/Src/port.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/port.o"
+../Core/Src/LCD44780.c: In function 'LCD44780_UpdateTemperature':
+../Core/Src/LCD44780.c:92:5: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   92 |     sprintf(temperatureString, "%.2f", temperature);
+      |     ^~~~~~~
+../Core/Src/LCD44780.c:92:5: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/LCD44780.c:8:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+    7 | #include "LCD44780.h"
+  +++ |+#include <stdio.h>
+    8 | 
+../Core/Src/LCD44780.c:98:5: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+   98 |     memset(temperatureString, 0, sizeof(temperatureString));
+      |     ^~~~~~
+../Core/Src/LCD44780.c:98:5: warning: incompatible implicit declaration of built-in function 'memset'
+../Core/Src/LCD44780.c:8:1: note: include '<string.h>' or provide a declaration of 'memset'
+    7 | #include "LCD44780.h"
+  +++ |+#include <string.h>
+    8 | 
+../Core/Src/port.c: In function 'UART_Send_Temperature':
+../Core/Src/port.c:170:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  170 |    printf("Temperatura=%.2f\n",temperature);
+      |    ^~~~~~
+../Core/Src/port.c:170:4: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/port.c:8:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    7 | #include "port.h"
+  +++ |+#include <stdio.h>
+    8 | 
+../Core/Src/port.c: In function 'UART_TemperatureAlarm':
+../Core/Src/port.c:174:4: warning: incompatible implicit declaration of built-in function 'printf'
+  174 |    printf("Alarma: Err1\n");
+      |    ^~~~~~
+../Core/Src/port.c:174:4: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/port.c: In function 'UART_SensorTemperatureError':
+../Core/Src/port.c:179:4: warning: incompatible implicit declaration of built-in function 'printf'
+  179 |    printf("Error en lectura del sensor: Err2\n");
+      |    ^~~~~~
+../Core/Src/port.c:179:4: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "BMP280_SPI_UART.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/BMP280_SPI_UART/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMP280_SPI_UART.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BMP280_SPI_UART.elf
+ 
+arm-none-eabi-size   BMP280_SPI_UART.elf 
+arm-none-eabi-objdump -h -S  BMP280_SPI_UART.elf  > "BMP280_SPI_UART.list"
+   text	   data	    bss	    dec	    hex	filename
+  30776	    488	   1848	  33112	   8158	BMP280_SPI_UART.elf
+Finished building: default.size.stdout
+ 
+Finished building: BMP280_SPI_UART.list
+ 
+
+11:36:18 Build Finished. 0 errors, 8 warnings. (took 2s.642ms)
+

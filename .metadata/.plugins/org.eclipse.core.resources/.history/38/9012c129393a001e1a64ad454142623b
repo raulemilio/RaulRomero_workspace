@@ -1,0 +1,13 @@
+/*
+ * peripheralPort.h
+ *
+ *  Created on: Aug 13, 2023
+ *      Author: rome
+ */
+
+#ifndef API_INC_PERIPHERALPORT_H_
+#define API_INC_PERIPHERALPORT_H_
+
+
+
+#endif /* API_INC_PERIPHERALPORT_H_ */

@@ -1,0 +1,217 @@
+21:27:13 **** Incremental Build of configuration Debug for project LCD_HD44780_I2C_PCF8574T ****
+make -j4 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/API/Src/peripheralPort.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/Src/peripheralPort.d" -MT"Drivers/API/Src/peripheralPort.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/Src/peripheralPort.o"
+../Drivers/API/Src/peripheralPort.c: In function 'MX_I2C2_Init':
+../Drivers/API/Src/peripheralPort.c:19:3: error: 'hi2c2' undeclared (first use in this function)
+   19 |   hi2c2.Instance = I2C2;
+      |   ^~~~~
+../Drivers/API/Src/peripheralPort.c:19:3: note: each undeclared identifier is reported only once for each function it appears in
+../Drivers/API/Src/peripheralPort.c:19:20: error: 'I2C2' undeclared (first use in this function)
+   19 |   hi2c2.Instance = I2C2;
+      |                    ^~~~
+../Drivers/API/Src/peripheralPort.c:21:26: error: 'I2C_DUTYCYCLE_2' undeclared (first use in this function)
+   21 |   hi2c2.Init.DutyCycle = I2C_DUTYCYCLE_2;
+      |                          ^~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:23:31: error: 'I2C_ADDRESSINGMODE_7BIT' undeclared (first use in this function)
+   23 |   hi2c2.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:24:32: error: 'I2C_DUALADDRESS_DISABLE' undeclared (first use in this function)
+   24 |   hi2c2.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:26:32: error: 'I2C_GENERALCALL_DISABLE' undeclared (first use in this function)
+   26 |   hi2c2.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:27:30: error: 'I2C_NOSTRETCH_DISABLE' undeclared (first use in this function)
+   27 |   hi2c2.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
+      |                              ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:28:7: warning: implicit declaration of function 'HAL_I2C_Init'; did you mean 'MX_I2C2_Init'? [-Wimplicit-function-declaration]
+   28 |   if (HAL_I2C_Init(&hi2c2) != HAL_OK)
+      |       ^~~~~~~~~~~~
+      |       MX_I2C2_Init
+../Drivers/API/Src/peripheralPort.c:28:31: error: 'HAL_OK' undeclared (first use in this function)
+   28 |   if (HAL_I2C_Init(&hi2c2) != HAL_OK)
+      |                               ^~~~~~
+../Drivers/API/Src/peripheralPort.c:30:5: warning: implicit declaration of function 'Error_Handler' [-Wimplicit-function-declaration]
+   30 |     Error_Handler();
+      |     ^~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:35:7: warning: implicit declaration of function 'HAL_I2CEx_ConfigAnalogFilter' [-Wimplicit-function-declaration]
+   35 |   if (HAL_I2CEx_ConfigAnalogFilter(&hi2c2, I2C_ANALOGFILTER_ENABLE) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:35:44: error: 'I2C_ANALOGFILTER_ENABLE' undeclared (first use in this function)
+   35 |   if (HAL_I2CEx_ConfigAnalogFilter(&hi2c2, I2C_ANALOGFILTER_ENABLE) != HAL_OK)
+      |                                            ^~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:42:7: warning: implicit declaration of function 'HAL_I2CEx_ConfigDigitalFilter' [-Wimplicit-function-declaration]
+   42 |   if (HAL_I2CEx_ConfigDigitalFilter(&hi2c2, 0) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c: In function 'MX_SPI1_Init':
+../Drivers/API/Src/peripheralPort.c:68:3: error: 'hspi1' undeclared (first use in this function)
+   68 |   hspi1.Instance = SPI1;
+      |   ^~~~~
+../Drivers/API/Src/peripheralPort.c:68:20: error: 'SPI1' undeclared (first use in this function)
+   68 |   hspi1.Instance = SPI1;
+      |                    ^~~~
+../Drivers/API/Src/peripheralPort.c:69:21: error: 'SPI_MODE_MASTER' undeclared (first use in this function)
+   69 |   hspi1.Init.Mode = SPI_MODE_MASTER;
+      |                     ^~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:70:26: error: 'SPI_DIRECTION_2LINES' undeclared (first use in this function)
+   70 |   hspi1.Init.Direction = SPI_DIRECTION_2LINES;
+      |                          ^~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:71:25: error: 'SPI_DATASIZE_8BIT' undeclared (first use in this function)
+   71 |   hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
+      |                         ^~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:72:28: error: 'SPI_POLARITY_LOW' undeclared (first use in this function)
+   72 |   hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
+      |                            ^~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:73:25: error: 'SPI_PHASE_1EDGE' undeclared (first use in this function)
+   73 |   hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
+      |                         ^~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:74:20: error: 'SPI_NSS_SOFT' undeclared (first use in this function)
+   74 |   hspi1.Init.NSS = SPI_NSS_SOFT;
+      |                    ^~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:75:34: error: 'SPI_BAUDRATEPRESCALER_32' undeclared (first use in this function)
+   75 |   hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_32;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:76:25: error: 'SPI_FIRSTBIT_MSB' undeclared (first use in this function)
+   76 |   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
+      |                         ^~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:77:23: error: 'SPI_TIMODE_DISABLE' undeclared (first use in this function)
+   77 |   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
+      |                       ^~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:78:31: error: 'SPI_CRCCALCULATION_DISABLE' undeclared (first use in this function)
+   78 |   hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:80:7: warning: implicit declaration of function 'HAL_SPI_Init'; did you mean 'MX_SPI1_Init'? [-Wimplicit-function-declaration]
+   80 |   if (HAL_SPI_Init(&hspi1) != HAL_OK)
+      |       ^~~~~~~~~~~~
+      |       MX_SPI1_Init
+../Drivers/API/Src/peripheralPort.c:80:31: error: 'HAL_OK' undeclared (first use in this function)
+   80 |   if (HAL_SPI_Init(&hspi1) != HAL_OK)
+      |                               ^~~~~~
+../Drivers/API/Src/peripheralPort.c: In function 'MX_USART3_UART_Init':
+../Drivers/API/Src/peripheralPort.c:105:3: error: 'huart3' undeclared (first use in this function)
+  105 |   huart3.Instance = USART3;
+      |   ^~~~~~
+../Drivers/API/Src/peripheralPort.c:105:21: error: 'USART3' undeclared (first use in this function)
+  105 |   huart3.Instance = USART3;
+      |                     ^~~~~~
+../Drivers/API/Src/peripheralPort.c:107:28: error: 'UART_WORDLENGTH_8B' undeclared (first use in this function)
+  107 |   huart3.Init.WordLength = UART_WORDLENGTH_8B;
+      |                            ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f429zitx.d" -MT"Core/Startup/startup_stm32f429zitx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f429zitx.o" "../Core/Startup/startup_stm32f429zitx.s"
+../Drivers/API/Src/peripheralPort.c:108:26: error: 'UART_STOPBITS_1' undeclared (first use in this function)
+  108 |   huart3.Init.StopBits = UART_STOPBITS_1;
+      |                          ^~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:109:24: error: 'UART_PARITY_ODD' undeclared (first use in this function)
+  109 |   huart3.Init.Parity = UART_PARITY_ODD;
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/LCD_HD44780_I2C_PCF8574T/Drivers/API/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+      |                        ^~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:110:22: error: 'UART_MODE_TX_RX' undeclared (first use in this function)
+  110 |   huart3.Init.Mode = UART_MODE_TX_RX;
+      |                      ^~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:111:27: error: 'UART_HWCONTROL_NONE' undeclared (first use in this function)
+  111 |   huart3.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:112:30: error: 'UART_OVERSAMPLING_16' undeclared (first use in this function)
+  112 |   huart3.Init.OverSampling = UART_OVERSAMPLING_16;
+      |                              ^~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:113:7: warning: implicit declaration of function 'HAL_UART_Init' [-Wimplicit-function-declaration]
+  113 |   if (HAL_UART_Init(&huart3) != HAL_OK)
+      |       ^~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:113:33: error: 'HAL_OK' undeclared (first use in this function)
+  113 |   if (HAL_UART_Init(&huart3) != HAL_OK)
+      |                                 ^~~~~~
+../Drivers/API/Src/peripheralPort.c: In function 'MX_GPIO_Init':
+../Drivers/API/Src/peripheralPort.c:130:3: error: unknown type name 'GPIO_InitTypeDef'
+  130 |   GPIO_InitTypeDef GPIO_InitStruct = {0};
+      |   ^~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:135:3: warning: implicit declaration of function '__HAL_RCC_GPIOF_CLK_ENABLE' [-Wimplicit-function-declaration]
+  135 |   __HAL_RCC_GPIOF_CLK_ENABLE();
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:136:3: warning: implicit declaration of function '__HAL_RCC_GPIOA_CLK_ENABLE' [-Wimplicit-function-declaration]
+  136 |   __HAL_RCC_GPIOA_CLK_ENABLE();
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:137:3: warning: implicit declaration of function '__HAL_RCC_GPIOD_CLK_ENABLE' [-Wimplicit-function-declaration]
+  137 |   __HAL_RCC_GPIOD_CLK_ENABLE();
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:140:3: warning: implicit declaration of function 'HAL_GPIO_WritePin' [-Wimplicit-function-declaration]
+  140 |   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
+      |   ^~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:140:21: error: 'GPIOD' undeclared (first use in this function)
+  140 |   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
+      |                     ^~~~~
+../Drivers/API/Src/peripheralPort.c:140:28: error: 'GPIO_PIN_14' undeclared (first use in this function)
+  140 |   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
+      |                            ^~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:140:41: error: 'GPIO_PIN_RESET' undeclared (first use in this function)
+  140 |   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
+      |                                         ^~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:143:18: error: request for member 'Pin' in something not a structure or union
+  143 |   GPIO_InitStruct.Pin = GPIO_PIN_14;
+      |                  ^
+../Drivers/API/Src/peripheralPort.c:144:18: error: request for member 'Mode' in something not a structure or union
+  144 |   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+      |                  ^
+../Drivers/API/Src/peripheralPort.c:144:26: error: 'GPIO_MODE_OUTPUT_PP' undeclared (first use in this function)
+  144 |   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+      |                          ^~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:145:18: error: request for member 'Pull' in something not a structure or union
+  145 |   GPIO_InitStruct.Pull = GPIO_NOPULL;
+      |                  ^
+../Drivers/API/Src/peripheralPort.c:145:26: error: 'GPIO_NOPULL' undeclared (first use in this function)
+  145 |   GPIO_InitStruct.Pull = GPIO_NOPULL;
+      |                          ^~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:146:18: error: request for member 'Speed' in something not a structure or union
+  146 |   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+      |                  ^
+../Drivers/API/Src/peripheralPort.c:146:27: error: 'GPIO_SPEED_FREQ_LOW' undeclared (first use in this function)
+  146 |   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:147:3: warning: implicit declaration of function 'HAL_GPIO_Init'; did you mean 'MX_GPIO_Init'? [-Wimplicit-function-declaration]
+  147 |   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+      |   ^~~~~~~~~~~~~
+      |   MX_GPIO_Init
+../Drivers/API/Src/peripheralPort.c: At top level:
+../Drivers/API/Src/peripheralPort.c:161:6: warning: conflicting types for 'Error_Handler'
+  161 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:30:5: note: previous implicit declaration of 'Error_Handler' was here
+   30 |     Error_Handler();
+      |     ^~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c: In function 'Error_Handler':
+../Drivers/API/Src/peripheralPort.c:165:3: warning: implicit declaration of function '__disable_irq' [-Wimplicit-function-declaration]
+  165 |   __disable_irq();
+      |   ^~~~~~~~~~~~~
+At top level:
+../Drivers/API/Src/peripheralPort.c:128:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  128 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:95:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+   95 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:57:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+   57 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Drivers/API/Src/peripheralPort.c:9:13: warning: 'MX_I2C2_Init' defined but not used [-Wunused-function]
+    9 | static void MX_I2C2_Init(void)
+      |             ^~~~~~~~~~~~
+make: *** [Drivers/API/Src/subdir.mk:19: Drivers/API/Src/peripheralPort.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+21:27:17 Build Failed. 44 errors, 17 warnings. (took 4s.633ms)
+

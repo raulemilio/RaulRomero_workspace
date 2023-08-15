@@ -1,0 +1,16 @@
+/*
+ * termometro.c
+ *
+ *  Created on: Aug 13, 2023
+ *      Author: rome
+ */
+
+#include "termometro.h"
+
+void FSM_Init()
+{
+	  MX_GPIO_Init();
+	  MX_SPI1_Init();
+	  MX_USART3_UART_Init();
+	  MX_I2C2_Init();
+}

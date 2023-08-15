@@ -1,0 +1,27 @@
+/*
+ * FSM_termometro.h
+ *
+ *  Created on: 14 ago. 2023
+ *      Author: rome
+ */
+
+#ifndef SRC_FSM_TERMOMETRO_H_
+#define SRC_FSM_TERMOMETRO_H_
+
+#include "main.h"
+#include "BMPXX80.h"
+#include "port.h"
+
+#define TEMPERATURE_ALARM 28
+#define TEMPERATURE_MIN   0
+#define TEMPERATURE_MAX   30
+
+
+
+void FSM_Init(void);
+void FSM_Connect(void);
+int8_t FSM_Measure(void);
+void FSM_Range(void);
+void FSM_Update(void);
+
+#endif /* SRC_FSM_TERMOMETRO_H_ */

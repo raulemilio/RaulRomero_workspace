@@ -1,0 +1,122 @@
+/*
+ * FSM_termometro.c
+ *
+ *  Created on: 14 ago. 2023
+ *      Author: rome
+ */
+#include <FSM_termometro.h>
+
+// Se utiliza para verificar si el sensor está o no conectado
+#define BMP280_DEVICE_ID	0x58
+
+/* Variables internas */
+typedef enum{
+	INIT,
+	CONNECT,
+	MEASURE,
+	RANGE,
+}fsmState_t;
+
+fsmState_t fsm_state=INIT;
+uint8_t device_id;
+int8_t error;
+
+static float temperature;
+/***********************************/
+
+//Configuración e inicialización de puertos y periféricos
+void FSM_Termometro_Init(void)
+{
+	  MX_GPIO_Init();
+	  MX_SPI1_Init();
+	  MX_USART3_UART_Init();
+	  MX_I2C2_Init();
+	  LCD44780_Init();
+}
+// La medición se realiza en modo Forzado (FORCEMODE) y a la frecuencia de muestreo menor
+// Verificación de la conexión del sensor con el microprocesador
+// ver datasheet BMP280
+uint8_t FSM_Termometro_Connect(void)
+{
+	 uint8_t ret;
+	 ret=BMP280_Init(&hspi1, BMP280_TEMPERATURE_16BIT, BMP280_FORCEDMODE);
+	 HAL_Delay(500);
+	 if(ret!=BMP280_DEVICE_ID){
+		 LCD44780_ConnectSensorError();
+	  	 UART_ConnectSensorError();
+	 }
+	 return ret;
+}
+
+int8_t FSM_Termometro_Measure(void)
+{
+	  int8_t ret;
+	  temperature=BMP280_ReadTemperature();
+
+	  if ((temperature<TEMPERATURE_MAX) && (temperature>TEMPERATURE_MIN)){
+		  UART_Send_Temperature(temperature);
+		  LCD44780_UpdateTemperature(temperature);
+		  ret =0; // Dentro del rango
+	  }else
+	  	  {
+		  	  LCD44780_SensorTemperatureError();
+		  	  UART_SensorTemperatureError();
+		  	  ret=-1; // Fuera del rango
+	  	  }
+	  return ret;
+}
+
+void FSM_Termometro_Range(void)
+{
+	if(temperature>TEMPERATURE_ALARM)
+	{
+		LCD44780_TemperatureAlarm();
+		UART_TemperatureAlarm();
+	}
+}
+// La máquina está diseñada a partir de la máquina de estados propuesta en el datasheet
+// del sensor
+// Se adaptó la máquina para que el sistema soporte conexiones/desconexiones del sensor
+void FSM_Termometro_Update(void)
+{
+	  switch (fsm_state) {
+
+	  	  	  case INIT:
+	  	  		    FSM_Termometro_Init();
+	                fsm_state=CONNECT;
+	  	  	  break;
+
+	  	  	  case CONNECT:
+	  	  		  	device_id=FSM_Termometro_Connect();
+	  	  		  	if(device_id==BMP280_DEVICE_ID)
+	  	  		  	{
+		  	  		    fsm_state=MEASURE;
+	  	  		  	}else
+	  	  		  		if(device_id!=BMP280_DEVICE_ID)
+	  	  		  		{
+	  	  		  		fsm_state=CONNECT;
+	  	  		  		}
+	  	  	  break;
+
+	  	  	  case MEASURE:
+	  	  		    error=FSM_Termometro_Measure();
+	  	  		    if(error==0){
+		  	  		    fsm_state=RANGE;
+	  	  		    }else
+	  	  		    	if(error==-1)
+	  	  		    	{
+	  	  		    	fsm_state=CONNECT;
+	  	  		    	}
+	  	  	  break;
+
+	  	  	  case RANGE:
+	  	  		    FSM_Termometro_Range();
+	  	  		    fsm_state=MEASURE;
+	  	  	  break;
+
+	  	  	  default:
+	  	  		fsm_state=INIT;
+	  	  	  break;
+	  	  }
+}
+

@@ -1,0 +1,18 @@
+/*
+ * FSM_termometro.h
+ *
+ *  Created on: 14 ago. 2023
+ *      Author: rome
+ */
+
+#ifndef SRC_FSM_TERMOMETRO_H_
+#define SRC_FSM_TERMOMETRO_H_
+
+#include "main.h"
+#include "BMPXX80.h"
+#include "port.h"
+
+void FSM_Init(void);
+void FSM_Connect(void);
+
+#endif /* SRC_FSM_TERMOMETRO_H_ */

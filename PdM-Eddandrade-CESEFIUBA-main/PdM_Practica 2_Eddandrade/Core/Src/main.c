@@ -1,0 +1,257 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2023 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "gpio.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+#define DELAY1 100
+#define DELAY2 500
+#define DELAY3 1000
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+
+/* USER CODE BEGIN PV */
+
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+/* USER CODE BEGIN PFP */
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* delayInit debe cargar el valor de duración del retardo en la estructura, en el campo
+correspondiente. No debe iniciar el conteo del retardo. Debe inicializar el flag running
+en `false´. */
+void delayInit( delay_t * delay, tick_t duration )
+{
+	assert(delay != NULL);
+	assert(duration >= 0);
+	delay->duration = duration;
+	delay->running = false;
+}
+
+/*  delayRead debe verificar el estado del flag running.
+○ false, tomar marca de tiempo y cambiar running a ‘true’
+○ true, hacer la cuenta para saber si el tiempo del retardo se cumplió o no:
+‘marca de tiempo actual - marca de tiempo inicial es mayor o igual a duración
+del retardo’?
+y devolver un valor booleano que indique si el tiempo se cumplió o no.
+○
+Cuando el tiempo se cumple se debe cambiar el flag running a false.*/
+
+bool_t delayRead( delay_t * delay ){
+
+	bool_t retValue = false;
+
+	assert(delay !=NULL);
+	if (delay->running == false){
+		delay->startTime = HAL_GetTick();
+		delay->running = true;
+	}
+	else{
+		 if((HAL_GetTick()-delay->startTime) >= delay->duration){
+			 delay->running = false;
+			 retValue = true;
+		 }
+	}
+	return retValue;
+}
+
+/*delayWrite permite cambiar el tiempo de duración de un delay existente*/
+
+void delayWrite( delay_t * delay, tick_t duration ){
+	assert(delay != NULL);
+	assert(duration >=0);
+	delay->duration=duration;
+}
+
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+  /* USER CODE BEGIN 1 */
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init(); //
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+
+  /* USER CODE BEGIN 2 */
+  MX_GPIO_Init(); //inicia el LEDVERDE
+  //Creación de estructuras para los 3 delays no bloqueantes
+  delay_t Delay1;
+  delay_t Delay2;
+  delay_t Delay3;
+
+  //Inicialización:
+  delayInit(&Delay1, DELAY1);
+  delayInit(&Delay2, DELAY2);
+  delayInit(&Delay3, DELAY3);
+
+
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+	  if (delayRead(&Delay1) == true && delayRead(&Delay2)!= true && delayRead(&Delay3)!= true) { // El retardo se ha cumplido, encender o apagar LED1
+		  HAL_GPIO_TogglePin(GPIOA, LEDVERDE_Pin);
+
+	          }
+	          if (delayRead(&Delay2) == true && delayRead(&Delay1)!= true && delayRead(&Delay3)!= true) { // El retardo se ha cumplido, encender o apagar LED2
+	        	  HAL_GPIO_TogglePin(GPIOA, LEDVERDE_Pin);
+	          }
+	          if (delayRead(&Delay3) == true && delayRead(&Delay1)!= true && delayRead(&Delay2)!= true) { // El retardo se ha cumplido, encender o apagar LED3
+	        	  HAL_GPIO_TogglePin(GPIOA, LEDVERDE_Pin);
+	          }
+
+	      return 0;
+
+  }
+  /* USER CODE END 3 */
+}
+
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+  /** Configure the main internal regulator output voltage
+  */
+  __HAL_RCC_PWR_CLK_ENABLE();
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
+
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+  RCC_OscInitStruct.PLL.PLLM = 16;
+  RCC_OscInitStruct.PLL.PLLN = 336;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
+  RCC_OscInitStruct.PLL.PLLQ = 2;
+  RCC_OscInitStruct.PLL.PLLR = 2;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/* USER CODE BEGIN 4 */
+
+/* USER CODE END 4 */
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+	HAL_GPIO_TogglePin(GPIOA, LEDVERDE_Pin);
+  /* User can add his own implementation to report the HAL error return state */
+  __disable_irq();
+  while (1)
+  {
+  }
+  /* USER CODE END Error_Handler_Debug */
+}
+
+#ifdef  USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */

@@ -1,0 +1,10 @@
+20:52:15 **** Incremental Build of configuration Debug for project TF_TERMOMETRO ****
+make -j4 all 
+arm-none-eabi-size   TF_TERMOMETRO.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25840	    484	   1788	  28112	   6dd0	TF_TERMOMETRO.elf
+Finished building: default.size.stdout
+ 
+
+20:52:17 Build Finished. 0 errors, 0 warnings. (took 2s.532ms)
+

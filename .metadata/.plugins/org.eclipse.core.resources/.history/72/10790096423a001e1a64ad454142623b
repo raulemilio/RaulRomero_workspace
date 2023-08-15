@@ -1,0 +1,18 @@
+/*
+ * termometro.h
+ *
+ *  Created on: Aug 13, 2023
+ *      Author: rome
+ */
+#include "main.h"
+
+#ifndef API_INC_TERMOMETRO_H_
+#define API_INC_TERMOMETRO_H_
+
+static I2C_HandleTypeDef hi2c2;
+lcd_init(hi2c2);
+MX_I2C2_Init();
+
+static void MX_I2C2_Init(void);
+
+#endif /* API_INC_TERMOMETRO_H_ */

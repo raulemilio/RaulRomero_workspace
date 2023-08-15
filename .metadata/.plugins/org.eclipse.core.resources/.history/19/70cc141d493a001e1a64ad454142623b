@@ -1,0 +1,21 @@
+/*
+ * port.h
+ *
+ *  Created on: Aug 13, 2023
+ *      Author: rome
+ */
+
+#ifndef INC_PORT_H_
+#define INC_PORT_H_
+
+#include "stm32f4xx_hal.h"
+#include "main.h"
+
+extern SPI_HandleTypeDef hspi1;
+extern I2C_HandleTypeDef hi2c2;
+
+void MX_GPIO_Init(void);
+void MX_SPI1_Init(void);
+void MX_I2C2_Init(void);
+
+#endif /* INC_PORT_H_ */
