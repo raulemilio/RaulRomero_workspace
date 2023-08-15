@@ -27,6 +27,8 @@ static void BMP280_Write8(uint8_t address, uint8_t data);
 
 //Privadas
 /*************************************************************************************/
+// Los datos contenidos en los registros tienen diferentes tamaños
+// por este motivo es necesario diferentes funciones que tengan en cuenta cada tamaño
 static uint8_t BMP280_Read8(uint8_t addr)
 {
     uint8_t tmp[2];
@@ -101,9 +103,6 @@ uint8_t BMP280_Init(SPI_HandleTypeDef *spi_handler, uint8_t temperature_resoluti
 			ret=-1;
 		}
 	}
-
-	//while(BMP280_Read8(BMP280_CHIPID) != BMP280_DEVICE_ID);
-
 	//Calibración
 	t1 = BMP280_Read16LE(BMP280_DIG_T1);
 	t2 = BMP280_Read16LE(BMP280_DIG_T2);

@@ -1,61 +1,6 @@
-11:32:39 **** Incremental Build of configuration Debug for project TF_Termometro2 ****
+11:46:37 **** Incremental Build of configuration Debug for project TF_Termometro2 ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc "../Core/API/Src/FSM_termometro.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/API/Src/FSM_termometro.d" -MT"Core/API/Src/FSM_termometro.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/API/Src/FSM_termometro.o"
-arm-none-eabi-gcc "../Core/API/Src/LCD44780.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/API/Src/LCD44780.d" -MT"Core/API/Src/LCD44780.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/API/Src/LCD44780.o"
-arm-none-eabi-gcc "../Core/API/Src/port.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/API/Src/port.d" -MT"Core/API/Src/port.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/API/Src/port.o"
-../Core/API/Src/LCD44780.c: In function 'LCD44780_UpdateTemperature':
-../Core/API/Src/LCD44780.c:111:5: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
-  111 |     sprintf(temperatureString, "%.2f", temperature);
-      |     ^~~~~~~
-../Core/API/Src/LCD44780.c:111:5: warning: incompatible implicit declaration of built-in function 'sprintf'
-../Core/API/Src/LCD44780.c:8:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-    7 | #include "LCD44780.h"
-  +++ |+#include <stdio.h>
-    8 | 
-../Core/API/Src/LCD44780.c:117:5: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
-  117 |     memset(temperatureString, 0, sizeof(temperatureString));
-      |     ^~~~~~
-../Core/API/Src/LCD44780.c:117:5: warning: incompatible implicit declaration of built-in function 'memset'
-../Core/API/Src/LCD44780.c:8:1: note: include '<string.h>' or provide a declaration of 'memset'
-    7 | #include "LCD44780.h"
-  +++ |+#include <string.h>
-    8 | 
-In file included from /home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API/Inc/FSM_termometro.h:11,
-                 from ../Core/Src/main.c:24:
-../Core/Inc/termometroConfig.h:23:27: warning: 'huart3' defined but not used [-Wunused-variable]
-   23 | static UART_HandleTypeDef huart3;
-      |                           ^~~~~~
-../Core/Inc/termometroConfig.h:22:27: warning: 'hi2c2' defined but not used [-Wunused-variable]
-   22 | static I2C_HandleTypeDef  hi2c2;
-      |                           ^~~~~
-../Core/Inc/termometroConfig.h:21:27: warning: 'hspi1' defined but not used [-Wunused-variable]
-   21 | static SPI_HandleTypeDef  hspi1;
-      |                           ^~~~~
-../Core/API/Src/port.c: In function 'UART_Send_Temperature':
-../Core/API/Src/port.c:163:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  163 |    printf("Temperatura=%.2f\n",temperature);
-      |    ^~~~~~
-../Core/API/Src/port.c:163:4: warning: incompatible implicit declaration of built-in function 'printf'
-../Core/API/Src/port.c:8:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-    7 | #include "port.h"
-  +++ |+#include <stdio.h>
-    8 | 
-../Core/API/Src/port.c: In function 'UART_TemperatureAlarm':
-../Core/API/Src/port.c:168:4: warning: incompatible implicit declaration of built-in function 'printf'
-  168 |    printf("Alarma: Err1\n");
-      |    ^~~~~~
-../Core/API/Src/port.c:168:4: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/API/Src/port.c: In function 'UART_SensorTemperatureError':
-../Core/API/Src/port.c:173:4: warning: incompatible implicit declaration of built-in function 'printf'
-  173 |    printf("Error en lectura del sensor: Err2\n");
-      |    ^~~~~~
-../Core/API/Src/port.c:173:4: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/API/Src/port.c: In function 'UART_SensorConnectError':
-../Core/API/Src/port.c:178:4: warning: incompatible implicit declaration of built-in function 'printf'
-  178 |    printf("Error en la Conexion con el sensor: Err3\n");
-      |    ^~~~~~
-../Core/API/Src/port.c:178:4: note: include '<stdio.h>' or provide a declaration of 'printf'
 arm-none-eabi-gcc -o "TF_Termometro2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TF_Termometro2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TF_Termometro2.elf
  
@@ -68,5 +13,5 @@ Finished building: default.size.stdout
 Finished building: TF_Termometro2.list
  
 
-11:32:42 Build Finished. 0 errors, 12 warnings. (took 2s.898ms)
+11:46:40 Build Finished. 0 errors, 0 warnings. (took 2s.487ms)
 

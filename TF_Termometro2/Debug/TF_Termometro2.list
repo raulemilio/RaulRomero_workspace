@@ -1868,7 +1868,7 @@ int8_t FSM_Termometro_Measure(void)
  8001318:	bd80      	pop	{r7, pc}
  800131a:	bf00      	nop
  800131c:	20000300 	.word	0x20000300
- 8001320:	42480000 	.word	0x42480000
+ 8001320:	420c0000 	.word	0x420c0000
 
 08001324 <FSM_Termometro_Range>:
 

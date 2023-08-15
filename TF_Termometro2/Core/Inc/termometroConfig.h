@@ -12,7 +12,7 @@
  * Parámetros generales de configuración
  */
 #define TEMPERATURE_MIN   0  // Temperatura mínima posible del ambiente a medir
-#define TEMPERATURE_MAX   50 // Temperatura máxima posible del ambiente a medir
+#define TEMPERATURE_MAX   35 // Temperatura máxima posible del ambiente a medir
 #define TEMPERATURE_ALARM 28 // Temperatura de alarma para generar un alerta
 
 /**********************************
