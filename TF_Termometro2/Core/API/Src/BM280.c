@@ -136,7 +136,6 @@ float BMP280_ReadTemperature(void)
 		  // SLEEPMODE
 		  // Solo puede leerse el dato cuando terminó la conversión,
 		  // es decir en SLEEPMODE.
-
 		  while(delayRead(&delayTimeConvertion!=CONVERTION_FINISH_MAX)){
 			mode = BMP280_Read8(BMP280_CONTROL);
 			mode &= 0x03;
@@ -147,17 +146,6 @@ float BMP280_ReadTemperature(void)
 			  	ret=-1;
 			  	}
 		  }
-//		  for(uint8_t i=0;i<COUNT_DATA_CONVERTION;i++)
-//		  {
-//			  mode = BMP280_Read8(BMP280_CONTROL);
-//			  mode &= 0x03;
-//				if (mode == BMP280_SLEEPMODE){
-//					break;
-//				}else
-//				{
-//					ret=-1;
-//				}
-//		  }
 		  // Ecuación de conversión dada por el fabricante
 		  // Temperatura en grados Celsius
 		  int32_t adc_T = BMP280_Read24(BMP280_TEMPDATA);

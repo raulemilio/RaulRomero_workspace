@@ -16,6 +16,7 @@
 #define COUNT_CONNECT_MAX 		  	10  // Cantidad de intentos de conexión con el sensor
 #define	TIME_CONVERTION_FINISH_MAX	100 // Tiempo de espera para la conversión de ADC del BMP280
 #define CONVERTION_FINISH_MAX 	  	true //Tiempo máximo de espera para la conversión
+
 // Tamaño del registro a leer/escribir
 #define BMP280_SIZE_8			 2
 #define BMP280_SIZE_16			 3

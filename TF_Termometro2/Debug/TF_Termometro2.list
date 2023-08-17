@@ -39,11 +39,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  0002501a  00000000  00000000  00034560  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00011064  00000000  00000000  0005957a  2**0
+ 18 .debug_line   00011062  00000000  00000000  0005957a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000d8119  00000000  00000000  0006a5de  2**0
+ 19 .debug_str    000d8119  00000000  00000000  0006a5dc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  001426f7  2**0
+ 20 .comment      00000050  00000000  00000000  001426f5  2**0
                   CONTENTS, READONLY
  21 .debug_frame  00004868  00000000  00000000  00142748  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -1666,11 +1666,11 @@ float BMP280_ReadTemperature(void)
  8001176:	7cbb      	ldrb	r3, [r7, #18]
  8001178:	2b01      	cmp	r3, #1
  800117a:	d164      	bne.n	8001246 <BMP280_ReadTemperature+0x11e>
+	  {
 		  // Cuando termina la conversión el sensor vuelve al estado
 		  // SLEEPMODE
 		  // Solo puede leerse el dato cuando terminó la conversión,
 		  // es decir en SLEEPMODE.
-
 		  while(delayRead(&delayTimeConvertion!=CONVERTION_FINISH_MAX)){
  800117c:	e00d      	b.n	800119a <BMP280_ReadTemperature+0x72>
 			mode = BMP280_Read8(BMP280_CONTROL);
@@ -1707,9 +1707,8 @@ float BMP280_ReadTemperature(void)
  80011b2:	e000      	b.n	80011b6 <BMP280_ReadTemperature+0x8e>
 			  		break;
  80011b4:	bf00      	nop
-//					ret=-1;
-//				}
-//		  }
+			  	}
+		  }
 		  // Ecuación de conversión dada por el fabricante
 		  // Temperatura en grados Celsius
 		  int32_t adc_T = BMP280_Read24(BMP280_TEMPDATA);
