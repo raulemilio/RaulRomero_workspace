@@ -24,3 +24,8 @@ Ingrese al archivo termometroConfig.h y configure los parámetros principales de
 ## Foto del equipo en funcionamiento
 
 ![Foto Real](images/fotoReal.jpeg)
+
+# Versión
+
+Versión 2. Nombre Termometro2
+Autor: Raúl Emilio Romero
