@@ -9,6 +9,7 @@
 #define API_INC_LCD44780_H_
 
 #include "main.h"
+#include "termometroConfig.h"
 #include "port.h"
 
 #define RS_BIT 0 // Register select bit

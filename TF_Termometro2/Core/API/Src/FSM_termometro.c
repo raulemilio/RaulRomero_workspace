@@ -55,7 +55,6 @@ static uint8_t FSM_Termometro_Connect(void)
 {
 	 uint8_t ret;
 	 ret=BMP280_Init(&hspi1, BMP280_TEMPERATURE_16BIT, BMP280_FORCEDMODE);
-	 HAL_Delay(500);
 
 	 if (ret!=0){
 		  ret =-1; // No se detectó el sensor

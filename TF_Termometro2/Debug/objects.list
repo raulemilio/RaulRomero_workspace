@@ -1,3 +1,4 @@
+"./Core/API/Src/API_dalay.o"
 "./Core/API/Src/BM280.o"
 "./Core/API/Src/FSM_termometro.o"
 "./Core/API/Src/LCD44780.o"

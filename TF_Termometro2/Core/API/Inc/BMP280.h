@@ -12,9 +12,10 @@
 
 // Device ID
 #define BMP280_DEVICE_ID 0x58
-// Cantidad de intentos de conexión con el sensor
-#define ESPERA_DEVICE 10
 
+#define COUNT_CONNECT_MAX 		  	10  // Cantidad de intentos de conexión con el sensor
+#define	TIME_CONVERTION_FINISH_MAX	100 // Tiempo de espera para la conversión de ADC del BMP280
+#define CONVERTION_FINISH_MAX 	  	true //Tiempo máximo de espera para la conversión
 // Tamaño del registro a leer/escribir
 #define BMP280_SIZE_8			 2
 #define BMP280_SIZE_16			 3
@@ -22,7 +23,7 @@
 #define BMP280_TIMEOUT			 10
 
 // Resolución del conversor
-#define BMP280_TEMPERATURE_16BIT 1
+#define BMP280_TEMPERATURE_16BIT 1 // 0,005 °C de resolución
 #define BMP280_TEMPERATURE_17BIT 2
 #define BMP280_TEMPERATURE_18BIT 3
 #define BMP280_TEMPERATURE_19BIT 4

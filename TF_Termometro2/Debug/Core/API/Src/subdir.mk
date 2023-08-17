@@ -5,18 +5,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/API/Src/API_dalay.c \
 ../Core/API/Src/BM280.c \
 ../Core/API/Src/FSM_termometro.c \
 ../Core/API/Src/LCD44780.c \
 ../Core/API/Src/port.c 
 
 OBJS += \
+./Core/API/Src/API_dalay.o \
 ./Core/API/Src/BM280.o \
 ./Core/API/Src/FSM_termometro.o \
 ./Core/API/Src/LCD44780.o \
 ./Core/API/Src/port.o 
 
 C_DEPS += \
+./Core/API/Src/API_dalay.d \
 ./Core/API/Src/BM280.d \
 ./Core/API/Src/FSM_termometro.d \
 ./Core/API/Src/LCD44780.d \
@@ -30,7 +33,7 @@ Core/API/Src/%.o Core/API/Src/%.su Core/API/Src/%.cyclo: ../Core/API/Src/%.c Cor
 clean: clean-Core-2f-API-2f-Src
 
 clean-Core-2f-API-2f-Src:
-	-$(RM) ./Core/API/Src/BM280.cyclo ./Core/API/Src/BM280.d ./Core/API/Src/BM280.o ./Core/API/Src/BM280.su ./Core/API/Src/FSM_termometro.cyclo ./Core/API/Src/FSM_termometro.d ./Core/API/Src/FSM_termometro.o ./Core/API/Src/FSM_termometro.su ./Core/API/Src/LCD44780.cyclo ./Core/API/Src/LCD44780.d ./Core/API/Src/LCD44780.o ./Core/API/Src/LCD44780.su ./Core/API/Src/port.cyclo ./Core/API/Src/port.d ./Core/API/Src/port.o ./Core/API/Src/port.su
+	-$(RM) ./Core/API/Src/API_dalay.cyclo ./Core/API/Src/API_dalay.d ./Core/API/Src/API_dalay.o ./Core/API/Src/API_dalay.su ./Core/API/Src/BM280.cyclo ./Core/API/Src/BM280.d ./Core/API/Src/BM280.o ./Core/API/Src/BM280.su ./Core/API/Src/FSM_termometro.cyclo ./Core/API/Src/FSM_termometro.d ./Core/API/Src/FSM_termometro.o ./Core/API/Src/FSM_termometro.su ./Core/API/Src/LCD44780.cyclo ./Core/API/Src/LCD44780.d ./Core/API/Src/LCD44780.o ./Core/API/Src/LCD44780.su ./Core/API/Src/port.cyclo ./Core/API/Src/port.d ./Core/API/Src/port.o ./Core/API/Src/port.su
 
 .PHONY: clean-Core-2f-API-2f-Src
 

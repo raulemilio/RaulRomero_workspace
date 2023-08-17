@@ -74,7 +74,7 @@ void MX_SPI_Init(void)
   hspi.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi.Init.NSS = SPI_NSS_SOFT;
-  hspi.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_32;
+  hspi.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_32; // 500 KHz
   hspi.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -161,22 +161,18 @@ void MX_USART_UART_Init(void)
 void UART_Send_Temperature(float temperature)
 {
 	  printf("Temperatura=%.2f\n",temperature);
-	  HAL_Delay(500);
 }
 void UART_TemperatureAlarm(void)
 {
 	  printf("Alarma: Err1\n");
-	  HAL_Delay(500);
 }
 void UART_SensorTemperatureError(void)
 {
 	  printf("Error en lectura del sensor: Err2\n");
-	  HAL_Delay(500);
 }
 void UART_SensorConnectError(void)
 {
 	  printf("Error en la Conexion con el sensor: Err3\n");
-	  HAL_Delay(500);
 }
 
 PUTCHAR_PROTOTYPE

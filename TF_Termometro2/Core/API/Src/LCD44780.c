@@ -36,9 +36,6 @@ static void LCD44780_SendCmd(uint8_t cmd) {
   uint8_t lower_nibble = cmd & 0x0F;
   LCD44780_TransmitReceive(upper_nibble, MODE_CMD);
   LCD44780_TransmitReceive(lower_nibble, MODE_CMD);
-  if (cmd == CMD_INIT_0 || cmd == CMD_INIT_2) {
-    HAL_Delay(2);
-  }
 }
 
 static void LCD44780_SendData(uint8_t data) {
@@ -72,7 +69,6 @@ static void LCD44780_SetCursor(uint8_t row, uint8_t column) {
 
 static void LCD44780_Clear(void) {
 	LCD44780_SendCmd(CMD_INIT_0);
-    HAL_Delay(2);
 }
 // Encendido de la iluminación
 static void LCD44780_Backlight(uint8_t state) {
@@ -87,19 +83,17 @@ static void LCD44780_Backlight(uint8_t state) {
 //Publicas
 /*FUNCIONES DE USUARIO*************************************************/
 void LCD44780_Init() {
-  HAL_Delay(50);
+  char *labelTemperature = "Temperatura:";
   LCD44780_TransmitReceive(CMD_INIT_1, MODE_CMD);
-  HAL_Delay(5);
   LCD44780_TransmitReceive(CMD_INIT_1, MODE_CMD);
-  HAL_Delay(1);
   LCD44780_TransmitReceive(CMD_INIT_1, MODE_CMD);
-  HAL_Delay(1);
   LCD44780_TransmitReceive(CMD_INIT_2, MODE_CMD);
+
   LCD44780_SendCmd(0x28);
   LCD44780_SendCmd(0x0C);
   LCD44780_SendCmd(0x06);
   LCD44780_SendCmd(0x01);
-  HAL_Delay(2);
+
   LCD44780_Backlight(BLACKLIGHT_ON);
 }
 void LCD44780_UpdateTemperature(float temperature)
@@ -117,7 +111,7 @@ void LCD44780_UpdateTemperature(float temperature)
 		  memset(temperatureString, 0, sizeof(temperatureString));
 		  LCD44780_SetCursor(1, 6);
 		  LCD44780_WriteString(labelTemperatureUnit );
-		  HAL_Delay(500);
+		  HAL_Delay(TEMPERATURE_TIME_UPDATE);
 }
 
 void LCD44780_TemperatureAlarm()
@@ -125,7 +119,7 @@ void LCD44780_TemperatureAlarm()
 	  char *labelTemperatureAlarm = "Alarma";
 	  LCD44780_SetCursor(1, 9);
 	  LCD44780_WriteString(labelTemperatureAlarm );
-	  HAL_Delay(500);
+	  HAL_Delay(TEMPERATURE_TIME_UPDATE);
 }
 void LCD44780_SensorTemperatureError()
 {
@@ -133,7 +127,7 @@ void LCD44780_SensorTemperatureError()
 	  LCD44780_Clear();
 	  LCD44780_SetCursor(1, 0);
 	  LCD44780_WriteString(labelSensorTemperatureError );
-	  HAL_Delay(500);
+	  HAL_Delay(TEMPERATURE_TIME_UPDATE);
 }
 void LCD44780_SensorConnectError()
 {
@@ -141,6 +135,6 @@ void LCD44780_SensorConnectError()
 	  LCD44780_Clear();
 	  LCD44780_SetCursor(1, 0);
 	  LCD44780_WriteString(labelSensorConnectError );
-	  HAL_Delay(500);
+	  HAL_Delay(TEMPERATURE_TIME_UPDATE);
 }
 /******************************************************************************/

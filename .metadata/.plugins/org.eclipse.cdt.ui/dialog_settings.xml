@@ -32,7 +32,7 @@
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
-		<item key="size.width" value="619"/>
-		<item key="size.height" value="180"/>
+		<item key="size.width" value="1004"/>
+		<item key="size.height" value="207"/>
 	</section>
 </section>

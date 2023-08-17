@@ -7,7 +7,8 @@
 #include "BMP280.h"
 #include "stm32f4xx_hal.h"
 #include "math.h"
-#include "delays.h"
+//#include "delays.h"
+#include "API_delay.h"
 
 //Variables Privadas
 static SPI_HandleTypeDef *spi_h;
@@ -15,6 +16,7 @@ static uint8_t  _temperature_res,_mode;
 static int16_t  t2, t3;
 static uint16_t t1;
 static int32_t  t_fine;
+static delay_t delayTimeConvertion; // Delay para la espera de la lectura del adc
 
 // Funciones Privadas
 static uint8_t BMP280_Read8(uint8_t addr);
@@ -78,9 +80,6 @@ uint8_t BMP280_Init(SPI_HandleTypeDef *spi_handler, uint8_t temperature_resoluti
 	spi_h = spi_handler;
 	uint8_t ret;
 	uint8_t id;
-	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-	HAL_Delay(5);
-	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
 
 	if (mode > BMP280_NORMALMODE)
 	    mode = BMP280_NORMALMODE;
@@ -92,7 +91,7 @@ uint8_t BMP280_Init(SPI_HandleTypeDef *spi_handler, uint8_t temperature_resoluti
 		temperature_resolution = BMP280_TEMPERATURE_20BIT;
 	_temperature_res = temperature_resolution;
 
-	for(int i=0;i<ESPERA_DEVICE;i++)
+	for(uint8_t i=0;i<COUNT_CONNECT_MAX;i++)
 	{
 		id=BMP280_Read8(BMP280_CHIPID);
 		if (id==BMP280_DEVICE_ID){
@@ -114,7 +113,11 @@ uint8_t BMP280_Init(SPI_HandleTypeDef *spi_handler, uint8_t temperature_resoluti
 
 float BMP280_ReadTemperature(void)
 {
+  float ret;  // Si la lectura pudo realizarse ret es el valor de temperatura
+  	  	  	  // Si la lectura no pudo realizarse ret=-1
   int32_t var1, var2;
+  float T;
+  delayInit(&delayTimeConvertion,TIME_CONVERTION_FINISH_MAX);
 
   if(_mode == BMP280_FORCEDMODE)
   {
@@ -134,13 +137,28 @@ float BMP280_ReadTemperature(void)
 		  // SLEEPMODE
 		  // Solo puede leerse el dato cuando terminó la conversión,
 		  // es decir en SLEEPMODE.
-		  while(1)
-		  {
-			  mode = BMP280_Read8(BMP280_CONTROL);
-			  mode &= 0x03;
-			  if(mode == BMP280_SLEEPMODE)
-				  break;
+
+		  while(delayRead(&delayTimeConvertion!=CONVERTION_FINISH_MAX)){
+			mode = BMP280_Read8(BMP280_CONTROL);
+			mode &= 0x03;
+			  if (mode == BMP280_SLEEPMODE){
+			  		break;
+			  	}else
+			  	{
+			  	ret=-1;
+			  	}
 		  }
+//		  for(uint8_t i=0;i<COUNT_DATA_CONVERTION;i++)
+//		  {
+//			  mode = BMP280_Read8(BMP280_CONTROL);
+//			  mode &= 0x03;
+//				if (mode == BMP280_SLEEPMODE){
+//					break;
+//				}else
+//				{
+//					ret=-1;
+//				}
+//		  }
 		  // Ecuación de conversión dada por el fabricante
 		  // Temperatura en grados Celsius
 		  int32_t adc_T = BMP280_Read24(BMP280_TEMPDATA);
@@ -155,11 +173,15 @@ float BMP280_ReadTemperature(void)
 
 		  t_fine = var1 + var2;
 
-		  float T  = (t_fine * 5 + 128) >> 8;
-		  return T/100;
+		  T  = (t_fine * 5 + 128) >> 8;
+		  T=T/100;
+		  ret=T;
 	  }
+  }else
+  {
+	  ret=-1;
   }
-  return -99;
+  return ret;
 }
 /*************************************************************************************/
 
