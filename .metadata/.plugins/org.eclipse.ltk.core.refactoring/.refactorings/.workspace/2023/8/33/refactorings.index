@@ -14,3 +14,4 @@
 1692024068798	Delete resource 'TF_termometro'
 1692024084970	Delete resource 'BMXX80_STM32'
 1692024119858	Rename resource 'BMP280_SPI_UART'
+1692279244468	Delete resource 'TF_Termometro2/Core/Inc/delays.h'

@@ -14,7 +14,6 @@
 #include "LCD44780.h"
 #include "port.h"
 
-#include "delays.h"
 #include <stdio.h>
 #include <string.h>
 

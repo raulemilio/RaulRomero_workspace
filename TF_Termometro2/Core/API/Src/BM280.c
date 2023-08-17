@@ -7,7 +7,6 @@
 #include "BMP280.h"
 #include "stm32f4xx_hal.h"
 #include "math.h"
-//#include "delays.h"
 #include "API_delay.h"
 
 //Variables Privadas
