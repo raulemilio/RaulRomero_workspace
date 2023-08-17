@@ -1,4 +1,4 @@
-11:55:45 **** Incremental Build of configuration Debug for project TF_Termometro2 ****
+12:00:41 **** Incremental Build of configuration Debug for project TF_Termometro2 ****
 make -j4 all 
 arm-none-eabi-size   TF_Termometro2.elf 
    text	   data	    bss	    dec	    hex	filename
