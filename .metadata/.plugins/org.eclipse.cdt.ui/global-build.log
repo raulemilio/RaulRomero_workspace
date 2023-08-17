@@ -1,46 +1,4 @@
-10:47:23 **** Incremental Build of configuration Debug for project TF_Termometro2 ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/API/Src/BM280.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/API/Src/BM280.d" -MT"Core/API/Src/BM280.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/API/Src/BM280.o"
-arm-none-eabi-gcc "../Core/API/Src/FSM_termometro.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API/Inc" -I"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/API/Src/FSM_termometro.d" -MT"Core/API/Src/FSM_termometro.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/API/Src/FSM_termometro.o"
-In file included from /home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API/Inc/FSM_termometro.h:11,
-                 from ../Core/Src/main.c:26:
-../Core/Inc/termometroConfig.h:23:27: warning: 'huart3' defined but not used [-Wunused-variable]
-   23 | static UART_HandleTypeDef huart3;
-      |                           ^~~~~~
-../Core/Inc/termometroConfig.h:22:27: warning: 'hi2c2' defined but not used [-Wunused-variable]
-   22 | static I2C_HandleTypeDef  hi2c2;
-      |                           ^~~~~
-../Core/Inc/termometroConfig.h:21:27: warning: 'hspi1' defined but not used [-Wunused-variable]
-   21 | static SPI_HandleTypeDef  hspi1;
-      |                           ^~~~~
-../Core/API/Src/BM280.c: In function 'BMP280_Read8':
-../Core/API/Src/BM280.c:38:2: warning: implicit declaration of function 'BMP280_SPI_TransmitReceive'; did you mean 'HAL_SPI_TransmitReceive'? [-Wimplicit-function-declaration]
-   38 |  BMP280_SPI_TransmitReceive(tmp,BMP280_SIZE_8,BMP280_TIMEOUT);
-      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~
-      |  HAL_SPI_TransmitReceive
-../Core/API/Src/BM280.c: In function 'BMP280_ReadTemperature':
-../Core/API/Src/BM280.c:139:41: warning: comparison between pointer and integer
-  139 |     while(delayRead(&delayTimeConvertion!=CONVERTION_MAX_FINISH)){
-      |                                         ^~
-../Core/API/Src/BM280.c:139:41: warning: passing argument 1 of 'delayRead' makes pointer from integer without a cast [-Wint-conversion]
-  139 |     while(delayRead(&delayTimeConvertion!=CONVERTION_MAX_FINISH)){
-In file included from ../Core/API/Src/BM280.c:10:
-/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/Core/API/Inc/API_delay.h:24:29: note: expected 'delay_t *' but argument is of type 'int'
-   24 | bool_t delayRead( delay_t * delay );
-      |                   ~~~~~~~~~~^~~~~
-arm-none-eabi-gcc -o "TF_Termometro2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/rome/STM32CubeIDE/workspace_1.12.1/RaulRomero_workspace/TF_Termometro2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TF_Termometro2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TF_Termometro2.elf
- 
-arm-none-eabi-size   TF_Termometro2.elf 
-arm-none-eabi-objdump -h -S  TF_Termometro2.elf  > "TF_Termometro2.list"
-   text	   data	    bss	    dec	    hex	filename
-  31356	    488	   2104	  33948	   849c	TF_Termometro2.elf
-Finished building: default.size.stdout
- 
-Finished building: TF_Termometro2.list
- 
-11:40:13 **** Incremental Build of configuration Debug for project TF_Termometro2 ****
+11:50:59 **** Incremental Build of configuration Debug for project TF_Termometro2 ****
 make -j4 all 
 arm-none-eabi-size   TF_Termometro2.elf 
    text	   data	    bss	    dec	    hex	filename
