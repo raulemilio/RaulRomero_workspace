@@ -132,10 +132,11 @@ float BMP280_ReadTemperature(void)
 
 	  if(mode == BMP280_FORCEDMODE)
 	  {
-		  // Cuando termina la conversión el sensor vuelve al estado
-		  // SLEEPMODE
-		  // Solo puede leerse el dato cuando terminó la conversión,
-		  // es decir en SLEEPMODE.
+		  /* Cuando termina la conversión el sensor vuelve al estado
+		   * SLEEPMODE
+		   * Solo puede leerse el dato cuando terminó la conversión,
+		   * es decir en SLEEPMODE.
+		   */
 		  while(delayRead(&delayTimeConvertion!=CONVERTION_MAX_FINISH)){
 			mode = BMP280_Read8(BMP280_CONTROL);
 			mode &= 0x03;

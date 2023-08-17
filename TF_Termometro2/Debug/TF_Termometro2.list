@@ -1666,11 +1666,11 @@ float BMP280_ReadTemperature(void)
  8001176:	7cbb      	ldrb	r3, [r7, #18]
  8001178:	2b01      	cmp	r3, #1
  800117a:	d164      	bne.n	8001246 <BMP280_ReadTemperature+0x11e>
-	  {
-		  // Cuando termina la conversión el sensor vuelve al estado
-		  // SLEEPMODE
-		  // Solo puede leerse el dato cuando terminó la conversión,
-		  // es decir en SLEEPMODE.
+		  /* Cuando termina la conversión el sensor vuelve al estado
+		   * SLEEPMODE
+		   * Solo puede leerse el dato cuando terminó la conversión,
+		   * es decir en SLEEPMODE.
+		   */
 		  while(delayRead(&delayTimeConvertion!=CONVERTION_MAX_FINISH)){
  800117c:	e00d      	b.n	800119a <BMP280_ReadTemperature+0x72>
 			mode = BMP280_Read8(BMP280_CONTROL);

@@ -23,4 +23,4 @@ Ingrese al archivo termometroConfig.h y configure los parámetros principales de
 
 ## Foto del equipo en funcionamiento
 
-![Foto Real](images/fotoReal.jpg)
+![Foto Real](images/fotoReal.jpeg)
