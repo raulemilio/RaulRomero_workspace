@@ -4,3 +4,4 @@
 1692030021789	Move 'FSM_termometro.h' to 'Inc'
 1692030034205	Move 'FSM_termometro.c' to 'Src'
 1692277832423	Rename resource 'API_dalay.h'
+1692279348582	Rename resource 'API_dalay.c'
