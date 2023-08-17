@@ -90,7 +90,7 @@ uint8_t BMP280_Init(SPI_HandleTypeDef *spi_handler, uint8_t temperature_resoluti
 		temperature_resolution = BMP280_TEMPERATURE_20BIT;
 	_temperature_res = temperature_resolution;
 
-	for(uint8_t i=0;i<COUNT_CONNECT_MAX;i++)
+	for(uint8_t i=0;i<COUNT_MAX_CONNECT;i++)
 	{
 		id=BMP280_Read8(BMP280_CHIPID);
 		if (id==BMP280_DEVICE_ID){
@@ -116,7 +116,7 @@ float BMP280_ReadTemperature(void)
   	  	  	  // Si la lectura no pudo realizarse ret=-1
   int32_t var1, var2;
   float T;
-  delayInit(&delayTimeConvertion,TIME_CONVERTION_FINISH_MAX);
+  delayInit(&delayTimeConvertion,TIME_MAX_CONVERTION_FINISH);
 
   if(_mode == BMP280_FORCEDMODE)
   {
@@ -125,7 +125,7 @@ float BMP280_ReadTemperature(void)
 	  ctrl &= ~(0x03);
 	  ctrl |= BMP280_FORCEDMODE;
 	  // Debido a que no puede accederse al dato si no está en FORCEMODE
-	  // Se carga FORCEMODE
+	  // Se carga FORCEMODE si es que no estaba
 	  BMP280_Write8(BMP280_CONTROL, ctrl);
 	  mode = BMP280_Read8(BMP280_CONTROL);
 	  mode &= 0x03;
@@ -136,7 +136,7 @@ float BMP280_ReadTemperature(void)
 		  // SLEEPMODE
 		  // Solo puede leerse el dato cuando terminó la conversión,
 		  // es decir en SLEEPMODE.
-		  while(delayRead(&delayTimeConvertion!=CONVERTION_FINISH_MAX)){
+		  while(delayRead(&delayTimeConvertion!=CONVERTION_MAX_FINISH)){
 			mode = BMP280_Read8(BMP280_CONTROL);
 			mode &= 0x03;
 			  if (mode == BMP280_SLEEPMODE){

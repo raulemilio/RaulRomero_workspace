@@ -1528,7 +1528,7 @@ uint8_t BMP280_Init(SPI_HandleTypeDef *spi_handler, uint8_t temperature_resoluti
  8001094:	78fb      	ldrb	r3, [r7, #3]
  8001096:	7013      	strb	r3, [r2, #0]
 
-	for(uint8_t i=0;i<COUNT_CONNECT_MAX;i++)
+	for(uint8_t i=0;i<COUNT_MAX_CONNECT;i++)
  8001098:	2300      	movs	r3, #0
  800109a:	73bb      	strb	r3, [r7, #14]
  800109c:	e00f      	b.n	80010be <BMP280_Init+0x66>
@@ -1552,7 +1552,7 @@ uint8_t BMP280_Init(SPI_HandleTypeDef *spi_handler, uint8_t temperature_resoluti
 			ret=-1;
  80010b4:	23ff      	movs	r3, #255	; 0xff
  80010b6:	73fb      	strb	r3, [r7, #15]
-	for(uint8_t i=0;i<COUNT_CONNECT_MAX;i++)
+	for(uint8_t i=0;i<COUNT_MAX_CONNECT;i++)
  80010b8:	7bbb      	ldrb	r3, [r7, #14]
  80010ba:	3301      	adds	r3, #1
  80010bc:	73bb      	strb	r3, [r7, #14]
@@ -1620,7 +1620,7 @@ float BMP280_ReadTemperature(void)
   	  	  	  // Si la lectura no pudo realizarse ret=-1
   int32_t var1, var2;
   float T;
-  delayInit(&delayTimeConvertion,TIME_CONVERTION_FINISH_MAX);
+  delayInit(&delayTimeConvertion,TIME_MAX_CONVERTION_FINISH);
  800112e:	2164      	movs	r1, #100	; 0x64
  8001130:	4849      	ldr	r0, [pc, #292]	; (8001258 <BMP280_ReadTemperature+0x130>)
  8001132:	f7ff fecb 	bl	8000ecc <delayInit>
@@ -1646,7 +1646,7 @@ float BMP280_ReadTemperature(void)
  8001154:	f043 0301 	orr.w	r3, r3, #1
  8001158:	74fb      	strb	r3, [r7, #19]
 	  // Debido a que no puede accederse al dato si no está en FORCEMODE
-	  // Se carga FORCEMODE
+	  // Se carga FORCEMODE si es que no estaba
 	  BMP280_Write8(BMP280_CONTROL, ctrl);
  800115a:	7cfb      	ldrb	r3, [r7, #19]
  800115c:	4619      	mov	r1, r3
@@ -1671,7 +1671,7 @@ float BMP280_ReadTemperature(void)
 		  // SLEEPMODE
 		  // Solo puede leerse el dato cuando terminó la conversión,
 		  // es decir en SLEEPMODE.
-		  while(delayRead(&delayTimeConvertion!=CONVERTION_FINISH_MAX)){
+		  while(delayRead(&delayTimeConvertion!=CONVERTION_MAX_FINISH)){
  800117c:	e00d      	b.n	800119a <BMP280_ReadTemperature+0x72>
 			mode = BMP280_Read8(BMP280_CONTROL);
  800117e:	20f4      	movs	r0, #244	; 0xf4
@@ -1692,7 +1692,7 @@ float BMP280_ReadTemperature(void)
 			  	ret=-1;
  8001196:	4b32      	ldr	r3, [pc, #200]	; (8001260 <BMP280_ReadTemperature+0x138>)
  8001198:	617b      	str	r3, [r7, #20]
-		  while(delayRead(&delayTimeConvertion!=CONVERTION_FINISH_MAX)){
+		  while(delayRead(&delayTimeConvertion!=CONVERTION_MAX_FINISH)){
  800119a:	4b2f      	ldr	r3, [pc, #188]	; (8001258 <BMP280_ReadTemperature+0x130>)
  800119c:	2b01      	cmp	r3, #1
  800119e:	d001      	beq.n	80011a4 <BMP280_ReadTemperature+0x7c>

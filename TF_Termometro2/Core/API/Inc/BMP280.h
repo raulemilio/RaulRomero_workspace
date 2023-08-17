@@ -13,9 +13,9 @@
 // Device ID
 #define BMP280_DEVICE_ID 0x58
 
-#define COUNT_CONNECT_MAX 		  	10  // Cantidad de intentos de conexión con el sensor
-#define	TIME_CONVERTION_FINISH_MAX	100 // Tiempo de espera para la conversión de ADC del BMP280
-#define CONVERTION_FINISH_MAX 	  	true //Tiempo máximo de espera para la conversión
+#define COUNT_MAX_CONNECT 		  	10  // Cantidad de intentos de conexión con el sensor
+#define	TIME_MAX_CONVERTION_FINISH	100 // Tiempo de espera para la conversión de ADC del BMP280
+#define CONVERTION_MAX_FINISH 	  	true //Tiempo máximo de espera para la conversión
 
 // Tamaño del registro a leer/escribir
 #define BMP280_SIZE_8			 2
