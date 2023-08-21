@@ -21,7 +21,7 @@
 #define SPI_ENABLE_PIN 	GPIO_PIN_14
 
 //Funciones Públicas
-// se agrego
+
 void setSPI_Port_Name(SPI_HandleTypeDef  hspiX);
 void setI2C_Port_Name(I2C_HandleTypeDef  hi2cX);
 void setUART_Port_Name(UART_HandleTypeDef huartX);

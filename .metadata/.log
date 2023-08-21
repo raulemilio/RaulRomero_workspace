@@ -10723,3 +10723,29 @@ Please see https://github.blog/2021-09-01-improving-git-protocol-security-github
 	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:191)
 	at org.eclipse.egit.ui.internal.push.ConfirmationPage$2.run(ConfirmationPage.java:211)
 	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.egit.ui 4 0 2023-08-21 08:57:24.999
+!MESSAGE git@github.com:raulemilio/RaulRomero_workspace.git: ERROR: You're using an RSA key with SHA-1, which is no longer allowed. Please use a newer client or a different key type.
+Please see https://github.blog/2021-09-01-improving-git-protocol-security-github/ for more information.
+
+
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: git@github.com:raulemilio/RaulRomero_workspace.git: ERROR: You're using an RSA key with SHA-1, which is no longer allowed. Please use a newer client or a different key type.
+Please see https://github.blog/2021-09-01-improving-git-protocol-security-github/ for more information.
+
+
+	at org.eclipse.jgit.api.LsRemoteCommand.execute(LsRemoteCommand.java:222)
+	at org.eclipse.jgit.api.LsRemoteCommand.call(LsRemoteCommand.java:161)
+	at org.eclipse.egit.core.op.ListRemoteOperation.run(ListRemoteOperation.java:116)
+	at org.eclipse.egit.ui.internal.components.AsynchronousListOperation.run(AsynchronousListOperation.java:78)
+	at org.eclipse.egit.ui.internal.dialogs.CancelableFuture$1.run(CancelableFuture.java:280)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.jgit.errors.NoRemoteRepositoryException: git@github.com:raulemilio/RaulRomero_workspace.git: ERROR: You're using an RSA key with SHA-1, which is no longer allowed. Please use a newer client or a different key type.
+Please see https://github.blog/2021-09-01-improving-git-protocol-security-github/ for more information.
+
+
+	at org.eclipse.jgit.transport.TransportGitSsh.cleanNotFound(TransportGitSsh.java:218)
+	at org.eclipse.jgit.transport.TransportGitSsh$SshFetchConnection.<init>(TransportGitSsh.java:306)
+	at org.eclipse.jgit.transport.TransportGitSsh.openFetch(TransportGitSsh.java:170)
+	at org.eclipse.jgit.api.LsRemoteCommand.execute(LsRemoteCommand.java:200)
+	... 5 more
